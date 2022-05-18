@@ -1,15 +1,15 @@
-<!-- Begin Page Content -->
-<div class="container-fluid">
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
 
-  <!-- DataTales Example -->
-  <div class="card shadow mb-4">
-    <div class="card-header py-3">
-      <h6 class="m-0 font-weight-bold text-primary">Barang Masuk</h6>
-    </div>
-    <div class="card-body">
+<head>
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.12.0/css/jquery.dataTables.min.css">
+  <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.2.3/css/buttons.dataTables.min.css">
+  <title>Laporan Pemeliharaan</title>
+</head>
 
+<body>
 
-      <table>
+<table>
         <tr>
           <td>
             LAPORAN PERBULAN DAN PERTAHUN
@@ -137,10 +137,29 @@
             </tbody>
           </table>
 
-          </tbody>
-          </table>
-        </div>
-      </div>
-    </div>
+</body>
 
-  </div>
+</html>
+
+
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script src="https://cdn.datatables.net/1.12.0/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/2.2.3/js/dataTables.buttons.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+<script src="https://cdn.datatables.net/buttons/2.2.3/js/buttons.html5.min.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() {
+    $('#dataTable').DataTable( {
+        dom: 'Bfrtip',
+        buttons: [
+            {
+                extend: 'pdfHtml5',
+                orientation: 'landscape',
+                pageSize: 'LEGAL',
+                title: 'Laporan Pemeliharaan'
+            }
+        ]
+    } );
+} );
+</script>
