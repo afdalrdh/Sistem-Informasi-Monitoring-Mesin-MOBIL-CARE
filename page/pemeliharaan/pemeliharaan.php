@@ -9,10 +9,10 @@
 		<div class="card-body">
 			<div class="table-responsive">
 				<table class="table table-bordered" id="dataTable" >
-					<thead>
+					<thead class="table-dark">
 						<tr>
 							<th>No</th>
-							<th>Id Pemeliharaan</th>
+							<th>ID</th>
 							<th>Tanggal Pemeliharaan</th>
 							<th>Kode Mesin</th>
 							<th>Nama Mesin</th>

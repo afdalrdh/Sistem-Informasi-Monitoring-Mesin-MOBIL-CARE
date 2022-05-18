@@ -74,7 +74,7 @@ if ($bln == 'all') {
 ?>
 	<div class="table-responsive">
 
-		<table class="display table table-bordered" id="transaksi">
+		<table class="display table table-bordered" id="pemeliharaan">
 
 			<thead>
 				<tr>

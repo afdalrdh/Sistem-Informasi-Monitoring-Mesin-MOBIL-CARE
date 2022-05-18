@@ -130,11 +130,7 @@ if (empty($_SESSION['staf'])) {
         <div id="collapseData" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Menu:</h6>
-            <a class="collapse-item" href="?page=mesin">Data Mesin</a>
-            <a class="collapse-item" href="?page=gudang">Data Barang</a>
-            <a class="collapse-item" href="?page=jenisbarang">Jenis Barang</a>
-            <a class="collapse-item" href="?page=satuanbarang">Satuan Barang</a>
-
+            <a class="collapse-item" href="?page=mesin2">Data Mesin</a>
           </div>
         </div>
       </li>
@@ -144,13 +140,13 @@ if (empty($_SESSION['staf'])) {
       <li class="nav-item active">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
           <i class="fas fa-fw fa-folder"></i>
-          <span>Transaksi</span>
+          <span>Data Pemeliharaan</span>
         </a>
         <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Menu:</h6>
-            <a class="collapse-item" href="?page=barangmasuk">Barang Masuk</a>
-            <a class="collapse-item" href="?page=barangkeluar">Barang Keluar</a>
+            <a class="collapse-item" href="?page=pemeliharaan">Data Pemeliharaan</a>
+            <a class="collapse-item" href="?page=kerusakan">Data Kerusakan</a>
 
 
           </div>
@@ -174,10 +170,8 @@ if (empty($_SESSION['staf'])) {
         <div id="collapseLaporan" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Menu Laporan:</h6>
-            <a class="collapse-item" href="?page=laporan_supplier">Laporan Supplier</a>
-            <a class="collapse-item" href="?page=laporan_gudang">Laporan Stok Gudang</a>
             <a class="collapse-item" href="?page=laporan_barangmasuk">Laporan Barang Masuk</a>
-            <a class="collapse-item" href="?page=laporan_barangkeluar">Laporan Barang Keluar</a>
+            <a class="collapse-item" href="?page=laporan_kerusakan">Laporan Barang Keluar</a>
           </div>
         </div>
       </li>
@@ -254,9 +248,9 @@ if (empty($_SESSION['staf'])) {
             }
 
 
-            if ($page == "mesin") {
+            if ($page == "mesin2") {
               if ($aksi == "") {
-                include "page/mesin/mesin.php";
+                include "page/mesin/mesin2.php";
               }
               if ($aksi == "tambahmesin") {
                 include "page//mesin/tambahmesin.php";
@@ -306,19 +300,19 @@ if (empty($_SESSION['staf'])) {
 
 
 
-            if ($page == "barangmasuk") {
+            if ($page == "pemeliharaan") {
               if ($aksi == "") {
-                include "page/barangmasuk/barangmasuk.php";
+                include "page/pemeliharaan/pemeliharaan.php";
               }
-              if ($aksi == "tambahbarangmasuk") {
-                include "page/barangmasuk/tambahbarangmasuk.php";
+              if ($aksi == "tambahpemeliharaan") {
+                include "page/pemeliharaan/tambahpemeliharaan.php";
               }
-              if ($aksi == "ubahbarangmasuk") {
-                include "page/barangmasuk/ubahbarangmasuk.php";
+              if ($aksi == "ubahpemeliharaan") {
+                include "page/pemeliharaan/ubahpemeliharaan.php";
               }
 
-              if ($aksi == "hapusbarangmasuk") {
-                include "page/barangmasuk/hapusbarangmasuk.php";
+              if ($aksi == "hapuspemeliharaan") {
+                include "page/pemeliharaan/hapuspemeliharaan.php";
               }
             }
 
@@ -340,19 +334,19 @@ if (empty($_SESSION['staf'])) {
             }
 
 
-            if ($page == "barangkeluar") {
+            if ($page == "kerusakan") {
               if ($aksi == "") {
-                include "page/barangkeluar/barangkeluar.php";
+                include "page/kerusakan/kerusakan.php";
               }
-              if ($aksi == "tambahbarangkeluar") {
-                include "page/barangkeluar/tambahbarangkeluar.php";
+              if ($aksi == "tambahkerusakan") {
+                include "page/kerusakan/tambahkerusakan.php";
               }
-              if ($aksi == "ubahbarangkeluar") {
-                include "page/barangkeluar/ubahbarangkeluar.php";
+              if ($aksi == "ubahkerusakan") {
+                include "page/kerusakan/ubahkerusakan.php";
               }
 
-              if ($aksi == "hapusbarangkeluar") {
-                include "page/barangkeluar/hapusbarangkeluar.php";
+              if ($aksi == "hapuskerusakan") {
+                include "page/kerusakan/hapuskerusakan.php";
               }
             }
 
@@ -373,9 +367,9 @@ if (empty($_SESSION['staf'])) {
                 include "page/laporan/laporan_gudang.php";
               }
             }
-            if ($page == "laporan_barangkeluar") {
+            if ($page == "laporan_kerusakan") {
               if ($aksi == "") {
-                include "page/laporan/laporan_barangkeluar.php";
+                include "page/laporan/laporan_kerusakan.php";
               }
             }
 
@@ -400,7 +394,7 @@ if (empty($_SESSION['staf'])) {
         <footer class="sticky-footer bg-white">
           <div class="container my-auto">
             <div class="copyright text-center my-auto">
-              <span>Copyright &copy; 2019 . Sistem Informasi Inventaris Barang</span>
+              <span>Copyright &copy; 2022 . Sistem Informasi Mobile Care</span>
             </div>
           </div>
         </footer>
@@ -437,6 +431,13 @@ if (empty($_SESSION['staf'])) {
   <!-- Page jabatan custom scripts -->
   <script src="js/demo/datatables-demo.js"></script>
 
+  <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  <script src="https://cdn.datatables.net/1.12.0/js/jquery.dataTables.min.js"></script>
+  <script src="https://cdn.datatables.net/buttons/2.2.3/js/dataTables.buttons.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+  <script src="https://cdn.datatables.net/buttons/2.2.3/js/buttons.html5.min.js"></script>
+
   <!--script for this page-->
   <script>
     jQuery(document).ready(function($) {
@@ -444,7 +445,7 @@ if (empty($_SESSION['staf'])) {
         var tamp = $(this).val(); // Ciptakan variabel provinsi
         $.ajax({
           type: 'POST', // Metode pengiriman data menggunakan POST
-          url: 'page/barangmasuk/get_barang.php', // File yang akan memproses data
+          url: 'page/pemeliharaan/get_barang.php', // File yang akan memproses data
           data: 'tamp=' + tamp, // Data yang akan dikirim ke file pemroses
           success: function(data) { // Jika berhasil
             $('.tampung').html(data); // Berikan hasil ke id kota
@@ -462,7 +463,7 @@ if (empty($_SESSION['staf'])) {
         var tamp = $(this).val(); // Ciptakan variabel provinsi
         $.ajax({
           type: 'POST', // Metode pengiriman data menggunakan POST
-          url: 'page/barangmasuk/get_satuan.php', // File yang akan memproses data
+          url: 'page/pemeliharaan/get_satuan.php', // File yang akan memproses data
           data: 'tamp=' + tamp, // Data yang akan dikirim ke file pemroses
           success: function(data) { // Jika berhasil
             $('.tampung1').html(data); // Berikan hasil ke id kota
@@ -480,7 +481,7 @@ if (empty($_SESSION['staf'])) {
         $('#Myform1').submit(function() {
           $.ajax({
             type: 'POST',
-            url: 'page/laporan/export_laporan_barangmasuk_excel.php',
+            url: 'page/laporan/export_laporan_pemeliharaan_excel.php',
             data: $(this).serialize(),
             success: function(data) {
               $(".tampung1").html(data);
@@ -503,7 +504,7 @@ if (empty($_SESSION['staf'])) {
         $('#Myform2').submit(function() {
           $.ajax({
             type: 'POST',
-            url: 'page/laporan/export_laporan_barangkeluar_excel.php',
+            url: 'page/laporan/export_laporan_kerusakan_excel.php',
             data: $(this).serialize(),
             success: function(data) {
               $(".tampung2").html(data);

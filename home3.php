@@ -26,7 +26,7 @@
 
             </div>
             <div class="col-auto">
-              <i class="fas fa-user fa-2x text-black-300"></i>
+              <i class="fas fa-user fa-lg text-black-300"></i>
             </div>
           </div>
         </div>
@@ -40,7 +40,7 @@
           <div class="row no-gutters align-items-center">
             <div class="col mr-2">
               <a href="?page=mesin">
-                <div class="text-xs font-weight-bold text-info text-uppercase mb-1">
+                <div class="text-xs font-weight-bold align-items-center text-info text-uppercase mb-1">
                   <h4>Data Mesin</h4>
                 </div>
                 <div class="row no-gutters align-items-center">
@@ -53,40 +53,13 @@
                 </div>
             </div>
             <div class="col-auto">
-              <i class="fas fa-cog fa-2x text-black-300"></i>
+              <i class="fas fa-cog fa-lg text-black-300"></i>
             </div>
           </div>
         </div>
       </div>
     </div>
 
-
-    <!-- Earnings (Monthly) Card Example -->
-    <div class="col-xl-3 col-md-6 mb-4">
-      <div class="card border-left-info shadow h-100 py-2">
-        <div class="card-body">
-          <div class="row no-gutters align-items-center">
-            <div class="col mr-2">
-              <a href="?page=gudang">
-                <div class="text-xs font-weight-bold text-info text-uppercase mb-1">
-                  <h4>Data Gudang</h4>
-                </div>
-                <div class="row no-gutters align-items-center">
-                  <div class="col-auto">
-
-                  </div>
-                  <div class="col">
-
-                  </div>
-                </div>
-            </div>
-            <div class="col-auto">
-              <i class="fas fa-warehouse fa-2x text-black-300"></i>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
 
 
     <!-- Earnings (Monthly) Card Example -->
@@ -95,14 +68,14 @@
         <div class="card-body">
           <div class="row no-gutters align-items-center">
             <div class="col mr-2">
-              <a href="?page=barangmasuk">
+              <a href="?page=pemeliharaan">
                 <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
-                  <h4>Barang Masuk</h4>
+                  <h4>Data Pemeliharaan</h4>
                 </div>
 
             </div>
             <div class="col-auto">
-              <i class="fas fa-dollar-sign fa-2x text-black-300"></i>
+              <i class="fas fa-history fa-lg text-black-300"></i>
             </div>
           </div>
         </div>
@@ -115,14 +88,14 @@
         <div class="card-body">
           <div class="row no-gutters align-items-center">
             <div class="col mr-2">
-              <a href="?page=barangkeluar">
+              <a href="?page=kerusakan">
                 <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
-                  <h4>Barang Keluar</h4>
+                  <h4>Data Kerusakan</h4>
                 </div>
 
             </div>
             <div class="col-auto">
-              <i class="fas fa-comments fa-2x text-black-300"></i>
+              <i class="fas fa-house-damage fa-lg text-black-300"></i>
             </div>
           </div>
         </div>

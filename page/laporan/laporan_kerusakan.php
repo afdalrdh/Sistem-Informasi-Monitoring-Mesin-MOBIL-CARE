@@ -4,7 +4,7 @@
 <head>
   <link rel="stylesheet" href="https://cdn.datatables.net/1.12.0/css/jquery.dataTables.min.css">
   <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.2.3/css/buttons.dataTables.min.css">
-  <title>Laporan Pemeliharaan Mesin</title>
+  <title>Laporan Kerusakan Mesin</title>
 </head>
 
 <body>
@@ -12,7 +12,7 @@
 <table>
         <tr>
           <td>
-            Laporan Pemeliharaan Mesin
+            Laporan Kerusakan Mesin
           </td>
         </tr>
         <tr>
@@ -69,10 +69,12 @@
                 <th>No</th>
                 <th>ID</th>
                 <th>Tanggal</th>
-                <th>Kode</th>
+                <th>Kode Mesin</th>
                 <th>Nama Mesin</th>
-                <th>Checklist</th>
-                <th>Petugas</th>
+                <th>Jenis Kerusakan</th>
+                <th>Tindakan</th>
+                <th>Catatan</th>
+                <th>Biaya</th>
               </tr>
             </thead>
 
@@ -81,19 +83,21 @@
               <?php
 
               $no = 1;
-              $sql = $koneksi->query("select * from pemeliharaan");
+              $sql = $koneksi->query("select * from kerusakan");
               while ($data = $sql->fetch_assoc()) {
 
               ?>
 
                 <tr style="color:black">
                   <td><?php echo $no++; ?></td>
-                  <td><?php echo $data['id_pemeliharaan'] ?></td>
+                  <td><?php echo $data['id_kerusakan'] ?></td>
                   <td><?php echo $data['tanggal'] ?></td>
                   <td><?php echo $data['kode_barang'] ?></td>
                   <td><?php echo $data['nama_mesin'] ?></td>
-                  <td><?php echo $data['checklist'] ?></td>
-                  <td><?php echo $data['petugas'] ?></td>
+                  <td><?php echo $data['jenis'] ?></td>
+                  <td><?php echo $data['tindakan'] ?></td>
+                  <td><?php echo $data['catatan'] ?></td>
+                  <td><?php echo "Rp" . number_format($data['biaya']) ?></td>
                 </tr>
               <?php } ?>
 
@@ -118,11 +122,11 @@
         buttons: [
             {
                 extend: 'pdfHtml5',
-                orientation: 'potrait',
+                orientation: 'landscape',
                 pageSize: 'A4',
-                title: 'Laporan Pemeliharaan Mesin',
+                title: 'Laporan Kerusakan Mesin',
                 download: 'open'
-            }
+            },
         ]
     } );
 } );

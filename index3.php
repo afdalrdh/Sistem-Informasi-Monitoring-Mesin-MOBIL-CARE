@@ -47,16 +47,16 @@ if (empty($_SESSION['pimpinan'])) {
 
 </head>
 
-<body id="page-top">
+<body id="page-top" style="background-color:black">
 
   <!-- Page Wrapper -->
   <div id="wrapper">
 
     <!-- Sidebar -->
-    <ul class="navbar-nav sidebar sidebar-dark accordion" style="background-color: #FF2E00  ;" id="accordionSidebar">
+    <ul class="navbar-nav sidebar sidebar-dark accordion" style="background-color: white;" id="accordionSidebar">
 
       <!-- Sidebar - Brand -->
-      <a class="sidebar-brand d-flex align-items-center justify-content-center bg-light" href="index.php">
+      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.php" style="background-color:white ;">
         <img src="img/logo1.png" width="117" height="38"></img>
       </a>
 
@@ -84,9 +84,9 @@ if (empty($_SESSION['pimpinan'])) {
       </li>
       <li class="nav-item ">
         <a class="nav-link">
-          <div class="d-flex align-items-center justify-content-center" class="name"> <?php echo  $data['nama']; ?></div>
+          <div class="d-flex align-items-center justify-content-center" class="name" style="color:black"> <?php echo  $data['nama']; ?></div>
           </font>
-          <div class="d-flex align-items-center justify-content-center" class="email"><?php echo $data['jabatan']; ?></div>
+          <div class="d-flex align-items-center justify-content-center" class="email" style="color:black"><?php echo $data['jabatan']; ?></div>
         </a>
       </li>
 
@@ -96,8 +96,8 @@ if (empty($_SESSION['pimpinan'])) {
       <!-- Nav Item - Dashboard -->
       <li class="nav-item active">
         <a class="nav-link" href="?page=home3">
-          <i class="fas fa-fw fa-home"></i>
-          <span>Dashboard</span></a>
+          <i class="fas fa-fw fa-home" style="color:black"></i>
+          <span style="color:black">Dashboard</span></a>
       </li>
 
       <!-- Divider -->
@@ -113,20 +113,20 @@ if (empty($_SESSION['pimpinan'])) {
 
       <li class="nav-item active">
         <a class="nav-link" href="?page=pengguna">
-          <i class="fas fa-fw fa-user"></i>
-          <span>Data Karyawan</span></a>
+          <i class="fas fa-user" style="color:black"></i>
+          <span style="color:black">Data Karyawan</span></a>
       </li>
 
 
-      <li class="nav-item active">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseData" aria-expanded="true" aria-controls="collapseData">
-          <i class="fas fa-fw fa-folder"></i>
-          <span>Data Master</span>
+      <li class="nav-item active" style="color:black">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseData" aria-expanded="true" aria-controls="collapseData" style="color:black">
+          <i class="fas fa-fw fa-folder" style="color:black"></i>
+          <span style="color:black">Data Master</span>
         </a>
-        <div id="collapseData" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
-          <div class="bg-white py-2 collapse-inner rounded">
+        <div id="collapseData" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar" style="color:black">
+          <div class="bg-dark py-2 collapse-inner rounded" style="color:black">
             <h6 class="collapse-header">Menu:</h6>
-            <a class="collapse-item" href="?page=mesin">Data Mesin</a>
+            <a class="collapse-item " href="?page=mesin" style="color:white">Data Mesin</a>
           </div>
         </div>
       </li>
@@ -134,15 +134,15 @@ if (empty($_SESSION['pimpinan'])) {
 
 
       <li class="nav-item active">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
-          <i class="fas fa-fw fa-folder"></i>
-          <span>Data Pemeliharaan</span>
+        <a class="nav-link dropdown-toggle" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
+          <i class="fas fa-fw fa-folder" style="color:black"></i>
+          <span style="color:black"> Data Pemeliharaan</span>
         </a>
         <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
-          <div class="bg-white py-2 collapse-inner rounded">
+          <div class="bg-dark py-2 collapse-inner rounded">
             <h6 class="collapse-header">Menu:</h6>
-            <a class="collapse-item" href="?page=pemeliharaan">Data Pemeliharaan</a>
-            <a class="collapse-item" href="?page=kerusakan">Data Kerusakan</a>
+            <a class="collapse-item" href="?page=pemeliharaan" style="color:white">Data Pemeliharaan</a>
+            <a class="collapse-item" href="?page=kerusakan" style="color:white">Data Kerusakan</a>
           </div>
         </div>
       </li>
@@ -158,15 +158,14 @@ if (empty($_SESSION['pimpinan'])) {
 
       <li class="nav-item active">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseLaporan" aria-expanded="true" aria-controls="collapseLaporan">
-          <i class="fas fa-fw fa-folder"></i>
-          <span>Laporan</span>
+          <i class="fas fa-fw fa-folder" style="color:black"></i>
+          <span style="color:black">Laporan</span>
         </a>
-        <div id="collapseLaporan" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
-          <div class="bg-white py-2 collapse-inner rounded">
+        <div id="collapseLaporan" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar" style="color:black">
+          <div class="bg-dark py-2 collapse-inner rounded">
             <h6 class="collapse-header">Menu Laporan:</h6>
-            <a class="collapse-item" href="?page=laporan_barangmasuk">Laporan Pemeliharaan</a>
-            <a class="collapse-item" href="?page=laporan_gudang">Laporan Stok Gudang</a>
-            <a class="collapse-item" href="?page=laporan_kerusakan">Laporan Barang Keluar</a>
+            <a class="collapse-item" href="?page=laporan_barangmasuk" style="color:white">Laporan Pemeliharaan</a>
+            <a class="collapse-item" href="?page=laporan_kerusakan"style="color:white"> Laporan Kerusakan</a>
           </div>
         </div>
       </li>
@@ -393,7 +392,7 @@ if (empty($_SESSION['pimpinan'])) {
         <footer class="sticky-footer bg-white">
           <div class="container my-auto">
             <div class="copyright text-center my-auto">
-              <span>Copyright &copy; 2019 . Sistem Informasi Inventaris Barang</span>
+              <span>Copyright &copy; 2022 . Sistem Informasi Mobile Care</span>
             </div>
           </div>
         </footer>
@@ -429,8 +428,6 @@ if (empty($_SESSION['pimpinan'])) {
 
   <!-- Page jabatan custom scripts -->
   <script src="js/demo/datatables-demo.js"></script>
-
-  
 
   <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
   <script src="https://cdn.datatables.net/1.12.0/js/jquery.dataTables.min.js"></script>

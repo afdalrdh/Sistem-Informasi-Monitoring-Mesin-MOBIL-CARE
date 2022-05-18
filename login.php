@@ -122,7 +122,7 @@ if ($login) {
 		} else if ($data['jabatan'] == mekanik && $jabatan == mekanik) {
 			$_SESSION['mekanik'] = $data[id];
 
-			header("location:index2.php?page=barangmasuk");
+			header("location:index2.php?page=pemeliharaan");
 		}
 	} else {
 		echo '<center><div class="alert alert-danger">Upss...!!! Login gagal. Silakan Coba Kembali</div></center>';

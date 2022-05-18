@@ -123,7 +123,7 @@ if (empty($_SESSION['mekanik'])) {
         <div id="collapseData" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Menu:</h6>
-            <a class="collapse-item" href="?page=mesin">Data Mesin</a>
+            <a class="collapse-item" href="?page=mesin2">Data Mesin</a>
 
           </div>
         </div>
@@ -139,8 +139,8 @@ if (empty($_SESSION['mekanik'])) {
         <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Menu:</h6>
-            <a class="collapse-item" href="?page=barangmasuk">Data Pemeliharaan</a>
-            <a class="collapse-item" href="?page=barangkeluar">Data Kerusakan</a>
+            <a class="collapse-item" href="?page=pemeliharaan">Data Pemeliharaan</a>
+            <a class="collapse-item" href="?page=kerusakan">Data Kerusakan</a>
 
 
           </div>
@@ -211,9 +211,9 @@ if (empty($_SESSION['mekanik'])) {
             $page = $_GET['page'];
             $aksi = $_GET['aksi'];
             
-            if ($page == "mesin") {
+            if ($page == "mesin2") {
               if ($aksi == "") {
-                include "page/mesin/mesin.php";
+                include "page/mesin/mesin2.php";
               }
               if ($aksi == "tambahmesin") {
                 include "page//supplier/tambahmesin.php";
@@ -263,19 +263,19 @@ if (empty($_SESSION['mekanik'])) {
 
 
 
-            if ($page == "barangmasuk") {
+            if ($page == "pemeliharaan") {
               if ($aksi == "") {
-                include "page/barangmasuk/barangmasuk.php";
+                include "page/pemeliharaan/pemeliharaan.php";
               }
-              if ($aksi == "tambahbarangmasuk") {
-                include "page/barangmasuk/tambahbarangmasuk.php";
+              if ($aksi == "tambahpemeliharaan") {
+                include "page/pemeliharaan/tambahpemeliharaan.php";
               }
-              if ($aksi == "ubahbarangmasuk") {
-                include "page/barangmasuk/ubahbarangmasuk.php";
+              if ($aksi == "ubahpemeliharaan") {
+                include "page/pemeliharaan/ubahpemeliharaan.php";
               }
 
-              if ($aksi == "hapusbarangmasuk") {
-                include "page/barangmasuk/hapusbarangmasuk.php";
+              if ($aksi == "hapuspemeliharaan") {
+                include "page/pemeliharaan/hapuspemeliharaan.php";
               }
             }
 
@@ -297,19 +297,19 @@ if (empty($_SESSION['mekanik'])) {
             }
 
 
-            if ($page == "barangkeluar") {
+            if ($page == "kerusakan") {
               if ($aksi == "") {
-                include "page/barangkeluar/barangkeluar.php";
+                include "page/kerusakan/kerusakan.php";
               }
-              if ($aksi == "tambahbarangkeluar") {
-                include "page/barangkeluar/tambahbarangkeluar.php";
+              if ($aksi == "tambahkerusakan") {
+                include "page/kerusakan/tambahkerusakan.php";
               }
-              if ($aksi == "ubahbarangkeluar") {
-                include "page/barangkeluar/ubahbarangkeluar.php";
+              if ($aksi == "ubahkerusakan") {
+                include "page/kerusakan/ubahkerusakan.php";
               }
 
-              if ($aksi == "hapusbarangkeluar") {
-                include "page/barangkeluar/hapusbarangkeluar.php";
+              if ($aksi == "hapuskerusakan") {
+                include "page/kerusakan/hapuskerusakan.php";
               }
             }
 
@@ -336,7 +336,7 @@ if (empty($_SESSION['mekanik'])) {
         <footer class="sticky-footer bg-white">
           <div class="container my-auto">
             <div class="copyright text-center my-auto">
-              <span>Copyright &copy; 2019 . Sistem Inventaris Barang</span>
+            <span>Copyright &copy; 2022 . Sistem Informasi Mobile Care</span>
             </div>
           </div>
         </footer>
@@ -380,7 +380,7 @@ if (empty($_SESSION['mekanik'])) {
         var tamp = $(this).val(); // Ciptakan variabel provinsi
         $.ajax({
           type: 'POST', // Metode pengiriman data menggunakan POST
-          url: 'page/barangmasuk/get_barang.php', // File yang akan memproses data
+          url: 'page/pemeliharaan/get_barang.php', // File yang akan memproses data
           data: 'tamp=' + tamp, // Data yang akan dikirim ke file pemroses
           success: function(data) { // Jika berhasil
             $('.tampung').html(data); // Berikan hasil ke id kota
