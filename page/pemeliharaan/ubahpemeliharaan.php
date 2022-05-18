@@ -4,6 +4,8 @@ $checked = $_GET['checklist'];
 $checked_ex = explode(",", $checked);
 $sql2 = $koneksi->query("select * from pemeliharaan where id_pemeliharaan = '$id_pemeliharaan'");
 $tampil = $sql2->fetch_assoc();
+
+$a = explode(',', $tampil['checklist']);
 ?>
 
 <div class="container-fluid">
@@ -53,19 +55,19 @@ $tampil = $sql2->fetch_assoc();
 						<label for="">Checklist</label>
 						<div class="form-check">
 							<div class="form-line">
-								<input type="checkbox" name="checklist[]" class="form-check-input" id="checklist[]" value="Kebersihan Mesin" />
+								<input type="checkbox" name="checklist[]" class="form-check-input" id="checklist[]" value="Kebersihan Mesin" <?php in_array('Kebersihan Mesin', $a) ? print 'checked' : ' '?>/>
 								<label class="form-check-label" for="checklist">
 									Kebersihan Mesin
 								</label>
 							</div>
 							<div class="form-line">
-								<input type="checkbox" name="checklist[]" class="form-check-input" id="checklist[]" value="Kesehatan Mesin" />
+								<input type="checkbox" name="checklist[]" class="form-check-input" id="checklist[]" value="Kesehatan Mesin" <?php in_array('Kesehatan Mesin', $a) ? print 'checked' : ' '?>/>
 								<label class="form-check-label" for="checklist">
 									Kesehatan Mesin
 								</label>
 							</div>
 							<div class="form-line">
-								<input type="checkbox" name="checklist[]" class="form-check-input" id="checklist[]" value="Ganti Canvas Mesin" />
+								<input type="checkbox" name="checklist[]" class="form-check-input" id="checklist[]" value="Ganti Canvas Mesin" <?php in_array('Ganti Canvas Mesin', $a) ? print 'checked' : ' '?>/>
 								<label class="form-check-label" for="checklist">
 									Ganti Canvas Mesin
 								</label>
@@ -94,13 +96,13 @@ $tampil = $sql2->fetch_assoc();
 						$kode_barang = $pecah_barang[0];
 						$nama_barang = $pecah_barang[1];
 						$checklist = $_POST['checklist'];
-						$allchecklist = explode(",", $checklist);
+						$allchecklist = implode(",", $checklist);
 						$catatan = $_POST['catatan'];
 						$jumlah = $_POST['jumlah'];
 						$nama_mesin = $_POST['nama_mesin'];
 
 						#$sql = $koneksi->query("UPDATE `pemeliharaan` SET `id`='$id',`id_pemeliharaan`='$id_pemeliharaan',`tanggal`='$tanggal',`kode_barang`='$kode_barang',`nama_barang`='$nama_barang',`checklist`='$allchecklist',`catatan`='$catatan',`jumlah`='$jumlah',`nama_mesin`='$nama_mesin' WHERE id_pemeliharaan='$id_pemeliharaan");
-						$sql = $koneksi->query("update pemeliharaan set tanggal='$tanggal', checklist='$checklist', catatan='$catatan' where id_pemeliharaan = '$id_pemeliharaan'");
+						$sql = $koneksi->query("update pemeliharaan set tanggal='$tanggal', checklist='$allchecklist', catatan='$catatan' where id_pemeliharaan = '$id_pemeliharaan'");
 						#print_r($id_pemeliharaan);
 		
 						if ($sql) {
