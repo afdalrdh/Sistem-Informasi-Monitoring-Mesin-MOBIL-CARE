@@ -36,7 +36,7 @@
 
 
 
-$koneksi = new mysqli("localhost", "root", "", "inventori");
+$koneksi = new mysqli("localhost", "id18955349_mobilcaredb", "Mobilcare123!", "id18955349_mobilcare");
 $no = mysqli_query($koneksi, "select kode_mesin from tb_mesin order by kode_mesin desc");
 $kdsupplier = mysqli_fetch_array($no);
 $kode = $kdsupplier['kode_mesin'];

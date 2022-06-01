@@ -1,6 +1,6 @@
  <?php
 
-	$koneksi = new mysqli("localhost", "root", "", "inventori");
+	$koneksi = new mysqli("sql107.epizy.com", "root", "", "inventori");
 
 
 

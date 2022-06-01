@@ -5,7 +5,7 @@ if (isset($_POST['submit'])) { ?>
 
 
 
-	$koneksi = new mysqli("localhost", "root", "", "inventori");
+	$koneksi = new mysqli("sql107.epizy.com", "root", "", "inventori");
 
 	header("Content-type: application/vnd-ms-excel");
 	header("Content-Disposition: attachment; filename=Laporan_Barang_Keluar (" . date('d-m-Y') . ").pdf");
@@ -60,7 +60,7 @@ if (isset($_POST['submit'])) { ?>
 
 <?php
 
-$koneksi = new mysqli("localhost", "root", "", "inventori");
+$koneksi = new mysqli("sql107.epizy.com", "root", "", "inventori");
 
 
 $bln = $_POST['bln'];

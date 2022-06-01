@@ -2,7 +2,7 @@
 
 session_start();
 error_reporting(E_ALL ^ (E_NOTICE | E_WARNING));
-$koneksi = new mysqli("localhost", "root", "", "inventori");
+$koneksi = new mysqli("localhost", "id18955349_mobilcaredb", "Mobilcare123!", "id18955349_mobilcare");
 
 
 ?>

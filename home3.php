@@ -70,7 +70,7 @@
             <div class="col mr-2">
               <a href="?page=pemeliharaan">
                 <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
-                  <h4>Data Pemeliharaan</h4>
+                  <h4>Kegiatan Pemeliharaan</h4>
                 </div>
 
             </div>

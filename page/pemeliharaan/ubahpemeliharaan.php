@@ -55,19 +55,19 @@ $a = explode(',', $tampil['checklist']);
 						<label for="">Checklist</label>
 						<div class="form-check">
 							<div class="form-line">
-								<input type="checkbox" name="checklist[]" class="form-check-input" id="checklist[]" value="Kebersihan Mesin" <?php in_array('Kebersihan Mesin', $a) ? print 'checked' : ' '?>/>
+								<input type="checkbox" name="checklist[]" class="form-check-input" id="checklist[]" value="Kebersihan Mesin" <?php in_array('Kebersihan Mesin', $a) ? print 'checked' : ' ' ?> />
 								<label class="form-check-label" for="checklist">
 									Kebersihan Mesin
 								</label>
 							</div>
 							<div class="form-line">
-								<input type="checkbox" name="checklist[]" class="form-check-input" id="checklist[]" value="Kesehatan Mesin" <?php in_array('Kesehatan Mesin', $a) ? print 'checked' : ' '?>/>
+								<input type="checkbox" name="checklist[]" class="form-check-input" id="checklist[]" value="Kesehatan Mesin" <?php in_array('Kesehatan Mesin', $a) ? print 'checked' : ' ' ?> />
 								<label class="form-check-label" for="checklist">
 									Kesehatan Mesin
 								</label>
 							</div>
 							<div class="form-line">
-								<input type="checkbox" name="checklist[]" class="form-check-input" id="checklist[]" value="Ganti Canvas Mesin" <?php in_array('Ganti Canvas Mesin', $a) ? print 'checked' : ' '?>/>
+								<input type="checkbox" name="checklist[]" class="form-check-input" id="checklist[]" value="Ganti Canvas Mesin" <?php in_array('Ganti Canvas Mesin', $a) ? print 'checked' : ' ' ?> />
 								<label class="form-check-label" for="checklist">
 									Ganti Canvas Mesin
 								</label>
@@ -84,7 +84,25 @@ $a = explode(',', $tampil['checklist']);
 
 						<input type="submit" name="simpan" value="Simpan" class="btn btn-primary">
 
+						<label for="">Petugas</label>
+						<div class="form-group">
+							<div class="form-line">
+								<select name="petugas" class="form-control" />
+								<option value="">-- Pilih Petugas --</option>
+								<?php
+
+								$sql = $koneksi->query("select * from users order by nama");
+								while ($data = $sql->fetch_assoc()) {
+									echo "<option value='$data[nama]'>$data[nama]</option>";
+								}
+								?>
+
+								</select>
+							</div>
+						</div>
 					</form>
+
+
 
 					<?php
 
@@ -100,11 +118,12 @@ $a = explode(',', $tampil['checklist']);
 						$catatan = $_POST['catatan'];
 						$jumlah = $_POST['jumlah'];
 						$nama_mesin = $_POST['nama_mesin'];
+						$petugas = $_POST['petugas'];
 
 						#$sql = $koneksi->query("UPDATE `pemeliharaan` SET `id`='$id',`id_pemeliharaan`='$id_pemeliharaan',`tanggal`='$tanggal',`kode_barang`='$kode_barang',`nama_barang`='$nama_barang',`checklist`='$allchecklist',`catatan`='$catatan',`jumlah`='$jumlah',`nama_mesin`='$nama_mesin' WHERE id_pemeliharaan='$id_pemeliharaan");
-						$sql = $koneksi->query("update pemeliharaan set tanggal='$tanggal', checklist='$allchecklist', catatan='$catatan' where id_pemeliharaan = '$id_pemeliharaan'");
+						$sql = $koneksi->query("update pemeliharaan set tanggal='$tanggal', checklist='$allchecklist', catatan='$catatan', petugas='$petugas' where id_pemeliharaan = '$id_pemeliharaan'");
 						#print_r($id_pemeliharaan);
-		
+
 						if ($sql) {
 					?>
 							<script type="text/javascript">

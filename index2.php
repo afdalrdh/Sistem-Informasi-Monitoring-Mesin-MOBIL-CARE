@@ -5,7 +5,7 @@ session_start();
 
 
 
-$koneksi = new mysqli("localhost", "root", "", "inventori");
+$koneksi = new mysqli("localhost", "id18955349_mobilcaredb", "Mobilcare123!", "id18955349_mobilcare");
 
 if (empty($_SESSION['mekanik'])) {
 
@@ -134,13 +134,13 @@ if (empty($_SESSION['mekanik'])) {
       <li class="nav-item active">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
           <i class="fas fa-fw fa-folder"></i>
-          <span>Transaksi</span>
+          <span>Kegiatan Pemeliharaan</span>
         </a>
         <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Menu:</h6>
-            <a class="collapse-item" href="?page=pemeliharaan">Data Pemeliharaan</a>
-            <a class="collapse-item" href="?page=kerusakan">Data Kerusakan</a>
+            <a class="collapse-item" href="?page=pemeliharaan">Planned Maintenance</a>
+            <a class="collapse-item" href="?page=kerusakan">Unplanned Maintenance</a>
 
 
           </div>
@@ -151,6 +151,25 @@ if (empty($_SESSION['mekanik'])) {
 
       <!-- Heading -->
 
+      <div class="sidebar-heading">
+        Laporan
+      </div>
+
+
+
+      <li class="nav-item active">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseLaporan" aria-expanded="true" aria-controls="collapseLaporan">
+          <i class="fas fa-fw fa-folder"></i>
+          <span>Laporan</span>
+        </a>
+        <div id="collapseLaporan" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <h6 class="collapse-header">Menu Laporan:</h6>
+            <a class="collapse-item" href="?page=laporan_barangmasuk">Laporan Pemeliharaan</a>
+            <a class="collapse-item" href="?page=laporan_kerusakan">Laporan Kerusakan</a>
+          </div>
+        </div>
+      </li>
 
 
       <!-- Divider -->
@@ -313,7 +332,28 @@ if (empty($_SESSION['mekanik'])) {
               }
             }
 
+            
+            if ($page == "laporan_supplier") {
+              if ($aksi == "") {
+                include "page/laporan/laporan_mesin.php";
+              }
+            }
+            if ($page == "laporan_barangmasuk") {
+              if ($aksi == "") {
+                include "page/laporan/laporan_barangmasuk.php";
+              }
+            }
 
+            if ($page == "laporan_gudang") {
+              if ($aksi == "") {
+                include "page/laporan/laporan_gudang.php";
+              }
+            }
+            if ($page == "laporan_kerusakan") {
+              if ($aksi == "") {
+                include "page/laporan/laporan_kerusakan.php";
+              }
+            }
 
 
 

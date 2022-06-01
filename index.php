@@ -5,18 +5,12 @@ session_start();
 
 
 
-$koneksi = new mysqli("localhost", "root", "", "inventori");
+$koneksi = new mysqli("localhost", "id18955349_mobilcaredb", "Mobilcare123!", "id18955349_mobilcare");
 
 if (empty($_SESSION['staf'])) {
 
   header("location:login.php");
 }
-
-
-
-
-
-
 
 ?>
 
@@ -140,13 +134,13 @@ if (empty($_SESSION['staf'])) {
       <li class="nav-item active">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
           <i class="fas fa-fw fa-folder"></i>
-          <span>Data Pemeliharaan</span>
+          <span>Kegiatan Pemeliharaan</span>
         </a>
         <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Menu:</h6>
-            <a class="collapse-item" href="?page=pemeliharaan">Data Pemeliharaan</a>
-            <a class="collapse-item" href="?page=kerusakan">Data Kerusakan</a>
+            <a class="collapse-item" href="?page=pemeliharaan">Planned Maintenance</a>
+            <a class="collapse-item" href="?page=kerusakan">Unplanned Maintenance</a>
 
 
           </div>
@@ -170,8 +164,8 @@ if (empty($_SESSION['staf'])) {
         <div id="collapseLaporan" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Menu Laporan:</h6>
-            <a class="collapse-item" href="?page=laporan_barangmasuk">Laporan Barang Masuk</a>
-            <a class="collapse-item" href="?page=laporan_kerusakan">Laporan Barang Keluar</a>
+            <a class="collapse-item" href="?page=laporan_barangmasuk">Laporan Pemeliharaan</a>
+            <a class="collapse-item" href="?page=laporan_kerusakan">Laporan Kerusakan</a>
           </div>
         </div>
       </li>

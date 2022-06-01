@@ -50,7 +50,7 @@
 <?php
 
 
-$koneksi = new mysqli("localhost", "root", "", "inventori");
+$koneksi = new mysqli("localhost", "id18955349_mobilcaredb", "Mobilcare123!", "id18955349_mobilcare");
 $no = mysqli_query($koneksi, "select id_kerusakan from kerusakan order by id_kerusakan desc");
 $idtran = mysqli_fetch_array($no);
 $kode = $idtran['id_kerusakan'];

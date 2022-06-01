@@ -5,7 +5,7 @@ session_start();
 
 
 
-$koneksi = new mysqli("localhost", "root", "", "inventori");
+$koneksi = new mysqli("localhost", "id18955349_mobilcaredb", "Mobilcare123!", "id18955349_mobilcare");
 
 if (empty($_SESSION['pimpinan'])) {
 
@@ -136,13 +136,13 @@ if (empty($_SESSION['pimpinan'])) {
       <li class="nav-item active">
         <a class="nav-link dropdown-toggle" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
           <i class="fas fa-fw fa-folder" style="color:black"></i>
-          <span style="color:black"> Data Pemeliharaan</span>
+          <span style="color:black"> Kegiatan Pemeliharaan</span>
         </a>
         <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
           <div class="bg-dark py-2 collapse-inner rounded">
             <h6 class="collapse-header">Menu:</h6>
-            <a class="collapse-item" href="?page=pemeliharaan" style="color:white">Data Pemeliharaan</a>
-            <a class="collapse-item" href="?page=kerusakan" style="color:white">Data Kerusakan</a>
+            <a class="collapse-item" href="?page=pemeliharaan">Planned Maintenance</a>
+            <a class="collapse-item" href="?page=kerusakan">Unplanned Maintenance</a>
           </div>
         </div>
       </li>
