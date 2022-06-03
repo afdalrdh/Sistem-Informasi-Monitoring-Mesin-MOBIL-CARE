@@ -5,7 +5,7 @@ session_start();
 
 
 
-$koneksi = new mysqli("localhost", "id18955349_mobilcaredb", "Mobilcare123!", "id18955349_mobilcare");
+$koneksi = new mysqli("localhost", "root", "", "inventori");
 
 if (empty($_SESSION['mekanik'])) {
 

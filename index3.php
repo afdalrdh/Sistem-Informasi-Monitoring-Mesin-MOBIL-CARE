@@ -5,7 +5,7 @@ session_start();
 
 
 
-$koneksi = new mysqli("localhost", "id18955349_mobilcaredb", "Mobilcare123!", "id18955349_mobilcare");
+$koneksi = new mysqli("localhost", "root", "", "inventori");
 
 if (empty($_SESSION['pimpinan'])) {
 
@@ -311,6 +311,10 @@ if (empty($_SESSION['pimpinan'])) {
 
               if ($aksi == "hapuspemeliharaan") {
                 include "page/pemeliharaan/hapuspemeliharaan.php";
+              }
+
+              if ($aksi == "selesaipemeliharaan") {
+                include "page/pemeliharaan/selesaipemeliharaan.php";
               }
             }
 

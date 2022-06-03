@@ -26,7 +26,7 @@
 						<?php
 
 						$no = 1;
-						$sql = $koneksi->query("select * from pemeliharaan");
+						$sql = $koneksi->query("select * from pemeliharaan where done=0");
 						while ($data = $sql->fetch_assoc()) {
 
 						?>
@@ -46,6 +46,7 @@
 								<td>
 									<a href="?page=pemeliharaan&aksi=ubahpemeliharaan&id_pemeliharaan=<?php echo $data['id_pemeliharaan'] ?>" class="btn btn-success">Ubah</a>
 									<a onclick="return confirm('Apakah anda yakin akan menghapus data ini?')" href="?page=pemeliharaan&aksi=hapuspemeliharaan&id_pemeliharaan=<?php echo $data['id_pemeliharaan'] ?>" class="btn btn-danger">Hapus</a>
+									<a onclick="return confirm('Apakah anda yakin merubah status menjadi selesai?')" href="?page=pemeliharaan&aksi=selesaipemeliharaan&id_pemeliharaan=<?php echo $data['id_pemeliharaan'] ?>" class="btn btn-primary">Selesai</a>
 								</td>
 							</tr>
 						<?php } ?>
